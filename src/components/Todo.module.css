@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: 1;
+
+  padding: 1.5rem;
+  margin-bottom: .75rem;
+  border-radius: 8px;
+
+  background: var(--gray-500);
+}

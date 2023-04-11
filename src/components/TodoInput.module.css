@@ -1,0 +1,24 @@
+.todoForm {
+  width: 100%;
+  display: flex;
+  margin-top: -1.5rem;
+}
+
+.todoInput {
+  flex: 1;
+  background: var(--gray-500);
+  color: var(--gray-100);
+  border: solid 1px var(--gray-700);
+  border-radius: 8px;
+  margin-right: .5rem;
+}
+
+.buttonCreate {
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  border-radius: 8px;
+
+  font-size: .875rem;
+  padding: 1rem;
+  font-weight: bold;
+}

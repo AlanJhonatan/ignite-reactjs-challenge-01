@@ -1,0 +1,51 @@
+.container {
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.boardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 1.5rem;
+}
+
+.createdTasks strong {
+  color: var(--blue);
+}
+
+.finishedTasks strong {
+  color: var(--purple);
+}
+
+.countLabel {
+ background: var(--gray-400);
+ color: var(--gray-200);
+ padding: 2px 8px;
+ border-radius: 8px;
+ margin-left: .5rem;
+ line-height: 1.6;
+}
+
+.boardContentEmpty {
+  border-top: solid 1px #333333;
+  border-radius: 8px;
+  color: var(--gray-300);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 4rem 1.5rem;
+}
+
+.boardContentEmpty strong {
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.boardContentEmpty span {
+  display: block;
+  line-height: 1.6;
+}

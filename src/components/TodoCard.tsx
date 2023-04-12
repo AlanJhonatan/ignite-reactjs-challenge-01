@@ -1,6 +1,6 @@
 import { CheckCircle, Circle, Icon, Trash } from 'phosphor-react'
 import styles from './TodoCard.module.css'
-import { MouseEvent, MouseEventHandler, useState } from 'react'
+import { useState } from 'react'
 
 
 export interface Todo {
@@ -43,7 +43,9 @@ export function TodoCard({ toDo }: TodoProps) {
       }
 
       
-      <Trash size={20} className={styles.buttonDelete} />
+      <div className={styles.buttonDelete}>
+        <Trash size={20} />
+      </div>
     </div>
   )
 }

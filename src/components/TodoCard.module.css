@@ -44,6 +44,18 @@
 
 .buttonDelete {
   color: var(--gray-300);
+  
+  border-radius: 8px;
+  padding: 5px;
+  line-height: 0;
+
+  transition: color 1s, background-color 1s;
+}
+
+.buttonDelete:hover {
+  cursor: pointer;
+  color: var(--red-500);
+  background-color: var(--gray-400);
 }
 
 .textChecked {

@@ -1,40 +1,28 @@
 import { Receipt } from 'phosphor-react'
 import styles from './TodoBoard.module.css'
 import { TodoCard } from './TodoCard'
-import { useState } from 'react'
 
-const todoList = [
-  {
-    id: 1,
-    isFinished: false,
-    text: '1Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-  },
-  {
-    id: 2,
-    isFinished: true,
-    text: '2Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-  },
-  {
-    id: 3,
-    isFinished: false,
-    text: '3Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-  },
-]
+interface Todo {
+  id: string
+  text: string
+  isFinished: boolean
+}
 
-export function TodoBoard() {
-  const [todos, setTodos] = useState(todoList)
+interface TodoBoardProps {
+  todos: Todo[]
+  onDeleteTodo: (id: string) => void
+  onToggleTodo: (id: string) => void
+}
 
-
-
+export function TodoBoard({ todos, onDeleteTodo, onToggleTodo }: TodoBoardProps) {
   const hasTodo = todos.length > 0
 
-  const todoFinished = todoList.filter((todo) => todo.isFinished).length
+  const todoFinished = todos.filter((todo) => todo.isFinished).length
 
-  const todoCount = todoList.length
+  const todoCount = todos.length
 
   return (
     <div className={styles.container}>
-
       <div className={styles.boardHeader}>
         <div className={styles.createdTasks}>
           <strong>Tarefas criadas</strong>
@@ -48,7 +36,7 @@ export function TodoBoard() {
       </div>
 
       {
-        hasTodo ? todos.map((toDo) => <TodoCard key={toDo.id} toDo={toDo} />)
+        hasTodo ? todos.map((toDo) => <TodoCard key={toDo.id} toDo={toDo} onDeleteTodo={onDeleteTodo} onToggleTodo={onToggleTodo} />)
         : (
           <div className={styles.boardContentEmpty}>
             <Receipt size={56} />

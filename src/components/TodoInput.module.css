@@ -11,6 +11,7 @@
   border: solid 1px var(--gray-700);
   border-radius: 8px;
   margin-right: .5rem;
+  padding: 1rem;
 }
 
 .buttonCreate {
@@ -21,4 +22,19 @@
   font-size: .875rem;
   padding: 1rem;
   font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+
+  transition: background-color .5s;
+}
+
+.buttonCreate:hover {
+  background: var(--blue);
+}
+
+.buttonCreate svg {
+  line-height: 0;
 }

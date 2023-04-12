@@ -27,7 +27,9 @@ export function TodoCard({ toDo }: TodoProps) {
             >
               <CheckCircle size={24} weight='fill' />
             </span>
-            <p className={styles.textChecked}>{toDo.text}</p>
+            <div className={styles.textContainer}>
+              <p className={styles.textChecked}>{toDo.text}</p>
+            </div>
           </>
         : 
           <>
@@ -38,7 +40,9 @@ export function TodoCard({ toDo }: TodoProps) {
               onMouseOut={() => setMouseHover(false)}
               className={styles.circle}
             />
-            <p>{toDo.text}</p>
+            <div className={styles.textContainer}>
+              <p>{toDo.text}</p>
+            </div>
           </>
       }
 

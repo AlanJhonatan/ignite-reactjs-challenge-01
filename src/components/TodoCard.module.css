@@ -10,8 +10,16 @@
   border-radius: 8px;
 
   color: var(--gray-100);
-
   background: var(--gray-500);
+}
+
+.textContainer {
+  width: 100%;
+  /* align-self: center; */
+}
+
+.textContainer {
+  text-align: left;
 }
 
 .container button {

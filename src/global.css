@@ -34,8 +34,6 @@ button, input, textarea {
   background: transparent;
   border: 0;
   color: var(--gray-100);
-
-  padding: 1rem;
 }
 
 button:hover {

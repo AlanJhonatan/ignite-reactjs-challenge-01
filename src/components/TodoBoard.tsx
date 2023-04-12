@@ -1,6 +1,7 @@
 import { Receipt } from 'phosphor-react'
 import styles from './TodoBoard.module.css'
 import { TodoCard } from './TodoCard'
+import { useState } from 'react'
 
 const todoList = [
   {
@@ -21,8 +22,15 @@ const todoList = [
 ]
 
 export function TodoBoard() {
+  const [todos, setTodos] = useState(todoList)
 
-  const hasTodo = todoList.length > 0
+
+
+  const hasTodo = todos.length > 0
+
+  const todoFinished = todoList.filter((todo) => todo.isFinished).length
+
+  const todoCount = todoList.length
 
   return (
     <div className={styles.container}>
@@ -30,17 +38,17 @@ export function TodoBoard() {
       <div className={styles.boardHeader}>
         <div className={styles.createdTasks}>
           <strong>Tarefas criadas</strong>
-          <span className={styles.countLabel}>0</span>
+          <span className={styles.countLabel}>{todoCount}</span>
         </div>
 
         <div className={styles.finishedTasks}>
           <strong>Concluídas</strong>
-          <span className={styles.countLabel}>0</span>
+          <span className={styles.countLabel}>{todoFinished}</span>
         </div>
       </div>
 
       {
-        hasTodo ? todoList.map((toDo) => <TodoCard key={toDo.id} toDo={toDo} />)
+        hasTodo ? todos.map((toDo) => <TodoCard key={toDo.id} toDo={toDo} />)
         : (
           <div className={styles.boardContentEmpty}>
             <Receipt size={56} />

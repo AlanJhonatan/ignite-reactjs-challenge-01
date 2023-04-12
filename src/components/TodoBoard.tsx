@@ -1,6 +1,6 @@
 import { Receipt } from 'phosphor-react'
 import styles from './TodoBoard.module.css'
-import { Todo } from './Todo'
+import { TodoCard } from './TodoCard'
 
 const todoList = [
   {
@@ -40,7 +40,7 @@ export function TodoBoard() {
       </div>
 
       {
-        hasTodo ? todoList.map((toDo) => <Todo key={toDo.id} toDo={toDo} />)
+        hasTodo ? todoList.map((toDo) => <TodoCard key={toDo.id} toDo={toDo} />)
         : (
           <div className={styles.boardContentEmpty}>
             <Receipt size={56} />
